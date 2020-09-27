@@ -11,9 +11,9 @@ from complex_numbers import complex_number
 from complex_numbers import complex_cart
 from complex_numbers import complex_polar
 import mat_op
-import De_lo_clasico_a_lo_cuantico as classic
+import Classic_Quantum as classic
 
-class Test_clasico_cuantico(unittest.TestCase):
+class Test_Classic_Quantum(unittest.TestCase):
     
     def setUp(self):
         self.mat_bool = [[False, False, False, False, False, False],
