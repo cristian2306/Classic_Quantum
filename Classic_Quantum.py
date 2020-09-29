@@ -38,8 +38,7 @@ def mul_mat_real(A,B):
         return ans
     else:
         return 'Error, el producto entre matrices no se puede'
-    
-def Quantum_system(mat,click,state):
+def Probabilistic_system(mat,click,state):
     def mul_mat_bool(A,B):
         m_a = len(A)
         n_a = len(A[0])
@@ -52,7 +51,6 @@ def Quantum_system(mat,click,state):
                     for k in range(len(A[0])):
                         ans[i][j] =  ans[i][j] or (A[i][k] and B[k][j])
         return ans
-    
     start = mat
     if type(mat[0][0])== bool:
         for i in range(click):
@@ -65,19 +63,22 @@ def Quantum_system(mat,click,state):
             else:
                 ans[i]=0
         Plot(len(ans),ans)
-        state_click
-    elif type(mat[0][0]) == type(complex_cart(1,0)): 
-        for i in range(click):
-            state_click = mat_op.mult_mat(start,mat_op.transpuesta(state))
-            start = mat_op.mult_mat(start,mat)
-        state_click = [(state_click[i][0].mod())**2 for i in range(len(state_click))]
-        Plot(len(state_click),state_click)
-    else:
-
+    else: 
         for i in range(click):
             state_click = mul_mat_real(start,mat_op.transpuesta(state))
             start = mul_mat_real(start,mat)
         Plot(len(mat_op.transpuesta(state_click)),mat_op.transpuesta(state_click))
+    return state_click
+    
+    
+    
+def Quantum_system(mat,click,state):
+    start = mat
+    for i in range(click):
+        state_click = mat_op.mult_mat(start,mat_op.transpuesta(state))
+        start = mat_op.mult_mat(start,mat)
+    state_click = [(state_click[i][0].mod())**2 for i in range(len(state_click))]
+    Plot(len(state_click),state_click)
     return state_click
 
 
