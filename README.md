@@ -1,5 +1,7 @@
 # DE LO CLASICO A LO CUANTICO
 De lo clasico a lo cuantico es un proyecto en el cual se da a entender al usuario las bases minimas de la computacion cuantica, en el repositorio `complex_number`, se introdugeron varias operaciones para los numeros complejos, en este proyecto usaremos ese repositorio con todas sus librerias, la idea del proyecto presentado es que el usuario tenga la capacidad de usar el programa contenido en este repositorio `Classic_Quantum`, en el cual se encuentran funciones con las cuales el usuario puede generar el experimento d elas canicas, el experimento de multiples rendijas, tanto probabilistico con reales como con numeros complejos.
+## Ejecucion
++ Para ejecutar este programa no basta con tener python, es necesario tener librerias adicionales, por este motivo recomiendo la instalacion de [Spyder](https://www.spyder-ide.org/), el cual contiene todo lo necesario para el funcionamiento de la libreria, adicionalmente es recomendable descargar la libreria [complex_numbers](https://github.com/cristian2306/Complex_numbers), para tener un funcionamiento eficaz, cabe recalcar que es necesario que todos los archivos de las dos librerias se encuentren en una misma carpeta.
 
 ## Sistema Probabilistico.
 + Por comodidad del usuario, el programa aproxima todos los resultados a dos decimales.
@@ -78,6 +80,8 @@ La funcion `Probabilistic_system` retornaba un vector columna de numeros reales 
         out: [[0.0], [0.0], [0.0], [0.17], [0.17], [0.0], [0.17], [0.17]]
       ```
 + De igual manera que en los isteas probabilisticos cada funcion muestra el grafico de probabilidad del sistema
+## Autor
+__Cristian Andres Castellanos Fino__
   
 
 
