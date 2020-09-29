@@ -52,21 +52,19 @@ class Test_Classic_Quantum(unittest.TestCase):
     def test_Probabilistic_system(self):
         self.assertEqual(classic.Probabilistic_system(self.mat_bool,5,self.vect_bool),
                          [[False], [False], [False], [False], [False], [True]])
-        self.assertEqual(classic.Probabilistic_system(self.mat_real,1,self.vect_real),[[21/36],[9/36],[6/36]])
+        self.assertEqual(classic.Probabilistic_system(self.mat_real,1,self.vect_real),[[0.58],[0.25],[0.17]])
         
     def Quantum_system(self):
-        self.assertEqual(classic.Quantum_system(self.complex_mat,1,self.complex_vect),[0.30250000000000005, 0.30250000000000005, 0.39690000000000003])
+        self.assertEqual(classic.Quantum_system(self.complex_mat,1,self.complex_vect),[[0.3], [0.3], [0.4]])
         
     
     def test_exp_real_slit(self):
-        self.assertEqual(classic.exp_real_slit(3,5),[[0.0],[0.0],[0.0],
-                                                     [0.0],[0.06666666666666667],[0.06666666666666667],
-                                                     [0.06666666666666667],[0.13333333333333333],[0.13333333333333333],
-                                                     [0.06666666666666667],[0.13333333333333333],[0.13333333333333333],
-                                                     [0.06666666666666667],[0.06666666666666667],[0.06666666666666667]])
+        self.assertEqual(classic.exp_real_slit(3,5),[[0.0],[0.0],[0.0],[0.0],[0.07],[0.07],
+                                                     [0.07],[0.13],[0.13],[0.07],[0.13],[0.13],
+                                                     [0.07],[0.07],[0.07]])
    
     def test_exp_complex_slit(self):
-        self.assertEqual(str(classic.exp_complex_slit(self.mat_compleja)),'[[0.0 + 0.0i], [0.0 + 0.0i], [0.0 + 0.0i], [-0.29 + 0.29i], [-0.29 + (-0.29i)], [0.0 + 0.0i], [-0.29 + (-0.29i)], [0.29 + (-0.29i)]]')
+        self.assertEqual(classic.exp_complex_slit(self.mat_compleja),[[0.0], [0.0], [0.0], [0.17], [0.17], [0.0], [0.17], [0.17]])
         
         
 
