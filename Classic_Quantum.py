@@ -33,8 +33,10 @@ def mul_mat_real(A,B):
         ans = [[0 for i in range(len(B[0]))] for i in range (len(A))]
         for i in range(len(A)):
             for j in range(len(B[0])):
+                ans[i][j] = round(ans[i][j],2)
                 for k in range(len(A[0])):
                     ans[i][j] +=  A[i][k] * B[k][j]
+                ans[i][j] = round(ans[i][j],2)
         return ans
     else:
         return 'Error, el producto entre matrices no se puede'
@@ -77,25 +79,25 @@ def Quantum_system(mat,click,state):
     for i in range(click):
         state_click = mat_op.mult_mat(start,mat_op.transpuesta(state))
         start = mat_op.mult_mat(start,mat)
-    state_click = [(state_click[i][0].mod())**2 for i in range(len(state_click))]
-    Plot(len(state_click),state_click)
+    state_click = [[round((state_click[i][0].mod())**2,2)] for i in range(len(state_click))]
+    Plot(len(state_click),mat_op.transpuesta(state_click))
     return state_click
 
 
-def exp_real_slit(rendijas,blancos):
+def exp_real_slit(slits,targets):
     
-    n = ((rendijas-1)*math.ceil(blancos/2))+1+rendijas+blancos
-    estado = [[0 for i in range (n)] for j in range (n)]
-    for i in range(rendijas):
-        estado[i+1][0]=1/rendijas
-        for j in range(i*(math.ceil(blancos/2))+rendijas+1,i*(math.ceil(blancos/2))+rendijas+blancos+1):
-            estado[j][i+1] += 1/blancos 
-            estado[j][j] = 1 
-    estado_2 = mul_mat_real(estado,estado)
+    n = ((slits-1)*math.ceil(targets/2))+1+slits+targets
+    state = [[0 for i in range (n)] for j in range (n)]
+    for i in range(slits):
+        state[i+1][0]=1/slits
+        for j in range(i*(math.ceil(targets/2))+slits+1,i*(math.ceil(targets/2))+slits+targets+1):
+            state[j][i+1] += 1/targets
+            state[j][j] = 1 
+    state_2 = mul_mat_real(state,state)
     V = [0 for i in range(n)]
     V[0]=1
     V = mat_op.transpuesta(V)
-    prob = mul_mat_real(estado_2,V)
+    prob = mul_mat_real(state_2,V)
     B = mat_op.transpuesta(prob)
     Plot(n,B)
     
@@ -111,10 +113,10 @@ def exp_complex_slit(mat):
         A = mat_op.mult_mat(A,mat)
     B = mat_op.transpuesta(C[:])
     for i in range(len(B)):
-        B[i] = B[i].mod()
+        B[i] = round(B[i].mod()**2,2)
     Plot(len(B),B)
     
-    return C
+    return mat_op.transpuesta(B)
 
         
     
