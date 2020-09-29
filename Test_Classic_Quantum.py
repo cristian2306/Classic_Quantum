@@ -40,10 +40,21 @@ class Test_Classic_Quantum(unittest.TestCase):
         A[7][2]=complex_cart(1/math.sqrt(6),-1/math.sqrt(6))
         A[7][7]=complex_cart(1,0)
         self.mat_compleja = A
-    def test_marbel_experiment(self):
-        self.assertEqual(classic.marbel_experiment(self.mat_bool,5,self.vect_bool),
+        B = [[complex_cart(0,0) for i in range(3)]for j in range(3)]
+        B[0][0]= complex_cart(1/math.sqrt(2),0)
+        B[1][0]=complex_cart(0,-1/math.sqrt(2))
+        B[0][1]=complex_cart(1/math.sqrt(2),0)
+        B[1][1]=complex_cart(0,1/math.sqrt(2))
+        B[2][2]=complex_cart(0,-1)
+        self.complex_mat = B
+        self.complex_vect = [complex_cart(1/math.sqrt(3),0),complex_cart(0,2/math.sqrt(15)),complex_cart(math.sqrt(2/5),0)]
+        
+    def test_Quantum_system(self):
+        self.assertEqual(classic.Quantum_system(self.mat_bool,5,self.vect_bool),
                          [[False], [False], [False], [False], [False], [True]])
-        self.assertEqual(classic.marbel_experiment(self.mat_real,1,self.vect_real),[[21/36],[9/36],[6/36]])
+        self.assertEqual(classic.Quantum_system(self.mat_real,1,self.vect_real),[[21/36],[9/36],[6/36]])
+        self.assertEqual(classic.Quantum_system(self.complex_mat,1,self.complex_vect),[0.30250000000000005, 0.30250000000000005, 0.39690000000000003])
+        
     def test_exp_real_slit(self):
         self.assertEqual(classic.exp_real_slit(3,5),[[0.0],[0.0],[0.0],
                                                      [0.0],[0.06666666666666667],[0.06666666666666667],
@@ -54,7 +65,9 @@ class Test_Classic_Quantum(unittest.TestCase):
         self.assertEqual(str(classic.exp_complex_slit(self.mat_compleja)),'[[0.0 + 0.0i], [0.0 + 0.0i], [0.0 + 0.0i], [-0.29 + 0.29i], [-0.29 + (-0.29i)], [0.0 + 0.0i], [-0.29 + (-0.29i)], [0.29 + (-0.29i)]]')
         
         
+
+
 if __name__== '__main__':
     unittest.main()
-        
+
         

@@ -10,8 +10,20 @@ from complex_numbers import complex_number
 from complex_numbers import complex_cart
 from complex_numbers import complex_polar
 import mat_op
-
-
+from matplotlib import pyplot as plt
+def Plot(Targ,Prob):
+    names = []
+    for i in range(Targ):
+        names += [i]
+    values = Prob
+    
+    plt.figure('Quantum')
+    plt.bar(names,values)
+    plt.ylabel('Probability')
+    plt.xlabel('Target')
+    plt.suptitle('Multiple slit experiment')
+    plt.show()
+    
 def mul_mat_real(A,B):
     m_a = len(A)
     n_a = len(A[0])
@@ -27,7 +39,7 @@ def mul_mat_real(A,B):
     else:
         return 'Error, el producto entre matrices no se puede'
     
-def marbel_experiment(mat,click,state):
+def Quantum_system(mat,click,state):
     def mul_mat_bool(A,B):
         m_a = len(A)
         n_a = len(A[0])
@@ -46,10 +58,18 @@ def marbel_experiment(mat,click,state):
         for i in range(click):
             state_click = mul_mat_bool(start,mat_op.transpuesta(state))
             start = mul_mat_bool(start,mat) 
-    else: 
+    elif type(mat[0][0]) == type(complex_cart(1,0)): 
+        for i in range(click):
+            state_click = mat_op.mult_mat(start,mat_op.transpuesta(state))
+            start = mat_op.mult_mat(start,mat)
+        state_click = [(state_click[i][0].mod())**2 for i in range(len(state_click))]
+        Plot(len(state_click),state_click)
+    else:
+
         for i in range(click):
             state_click = mul_mat_real(start,mat_op.transpuesta(state))
             start = mul_mat_real(start,mat)
+        Plot(len(mat_op.transpuesta(state_click)),mat_op.transpuesta(state_click))
     return state_click
 
 
@@ -66,8 +86,11 @@ def exp_real_slit(rendijas,blancos):
     V = [0 for i in range(n)]
     V[0]=1
     V = mat_op.transpuesta(V)
-    probabilidad = mul_mat_real(estado_2,V)
-    return probabilidad
+    prob = mul_mat_real(estado_2,V)
+    B = mat_op.transpuesta(prob)
+    Plot(n,B)
+    
+    return prob
 
 def exp_complex_slit(mat):
     A = mat
@@ -77,6 +100,11 @@ def exp_complex_slit(mat):
     for i in range(2):
         C = mat_op.mult_mat(A,V)
         A = mat_op.mult_mat(A,mat)
+    B = mat_op.transpuesta(C[:])
+    for i in range(len(B)):
+        B[i] = B[i].mod()
+    Plot(len(B),B)
+    
     return C
 
         
