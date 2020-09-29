@@ -58,6 +58,14 @@ def Quantum_system(mat,click,state):
         for i in range(click):
             state_click = mul_mat_bool(start,mat_op.transpuesta(state))
             start = mul_mat_bool(start,mat) 
+        ans = state_click[:]
+        for i in range(len(ans)):
+            if ans[i][0]==True:
+                ans[i] = 1
+            else:
+                ans[i]=0
+        Plot(len(ans),ans)
+        state_click
     elif type(mat[0][0]) == type(complex_cart(1,0)): 
         for i in range(click):
             state_click = mat_op.mult_mat(start,mat_op.transpuesta(state))
