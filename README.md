@@ -84,9 +84,18 @@ La funcion `Probabilistic_system` retornaba un vector columna de numeros reales 
 + Como muestra del experimento de la doble rendija se realizo este mismo, teniendo como materiales un laser, para la rendija se hizo uso de papel aluminio, el aluminio se usa como un polarizador, es decir dificulta en gran mayoria el paso de la luz a traves del mismo.
 el montaje realizado para el experimento se muestra a continuacion, junto con un video en donde se ve el funcionamiento de este, y la finalidad del proyecto.
 ![Imgur](https://i.imgur.com/kDIVRAV.jpg)
- [Doble_rendija](https://imgur.com/RSwZKvY)
+
+ [Video_Doble_rendija](https://imgur.com/RSwZKvY)
+ 
 ![Imgur](https://i.imgur.com/0hA1Jpp.jpg)
 
++ ¿En que consiste?
+   El experimento consiste en tomar un laser el cual apunte hacia una de las rendijas, y ver como se genera el efecto expuesto anteriormente, pero que hay detras de este fenomeno, la interferecia de un cuerpo y sus multiples historias en otros universos, siendo asi los fotones en este caso el laser, pasa a traves de las rendijas y pega en distintos puntos o blancos, como se describe en la libreria, al mismo tiempo, mostrando que los fotones se encuentran en distintos puntos en un mismo instante, la prbabbilidad con la que los fotones pegan en un objetivo es posible calcularla a traves de la libreria presentada.
+   El sistema se representa como...
+   ![Imgur](https://i.imgur.com/hTQnyQG.png)
+   la probabilidad dada por la libreria en grafico de barras seria...
+   !
+   
 
 ## Autor
 __Cristian Andres Castellanos Fino__
