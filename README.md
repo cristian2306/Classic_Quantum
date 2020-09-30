@@ -79,7 +79,15 @@ La funcion `Probabilistic_system` retornaba un vector columna de numeros reales 
             exp_commplex_slit(mat)
         out: [[0.0], [0.0], [0.0], [0.17], [0.17], [0.0], [0.17], [0.17]]
       ```
-+ De igual manera que en los isteas probabilisticos cada funcion muestra el grafico de probabilidad del sistema
++ De igual manera que en los isteas probabilisticos cada funcion muestra el grafico de probabilidad del sistema   
+
++ Como muestra del experimento de la doble rendija se realizo este mismo, teniendo como materiales un laser, para la rendija se hizo uso de papel aluminio, el aluminio se usa como un polarizador, es decir dificulta en gran mayoria el paso de la luz a traves del mismo.
+el montaje realizado para el experimento se muestra a continuacion, junto con un video en donde se ve el funcionamiento de este, y la finalidad del proyecto.
+![Imgur](https://i.imgur.com/kDIVRAV.jpg)
+ [Doble_rendija](https://imgur.com/RSwZKvY)
+![Imgur](https://i.imgur.com/0hA1Jpp.jpg)
+
+
 ## Autor
 __Cristian Andres Castellanos Fino__
   
