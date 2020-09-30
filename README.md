@@ -94,7 +94,7 @@ el montaje realizado para el experimento se muestra a continuacion, junto con un
    El sistema se representa como...
    ![Imgur](https://i.imgur.com/hTQnyQG.png)
    la probabilidad dada por la libreria en grafico de barras seria...
-   !
+   ![Imgur](https://i.imgur.com/RdM2umY.png)
    
 
 ## Autor
